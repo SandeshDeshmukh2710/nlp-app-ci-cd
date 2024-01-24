@@ -50,7 +50,7 @@ class TestSentimentAnalysis(unittest.TestCase):
         # Test preprocess_text function
         input_text = "One of the other reviewers has mentioned that after watching just 1 Oz episode you'll be hooked."
         expected_output = "one reviewers mentioned watching 1 oz episode hooked"
-        self.assertEqual(preprocess_text(input_text), expected_output)
+        self.assertEqual(self.preprocess_text(input_text), expected_output)
 
     def test_train_model(self):
         # Test train_model function with more realistic data
@@ -62,7 +62,7 @@ class TestSentimentAnalysis(unittest.TestCase):
         df = pd.DataFrame(data)
 
         # Preprocess the data
-        df['review'] = df['review'].apply(preprocess_text)
+        df['review'] = df['review'].apply(self.preprocess_text)
 
         # Split the dataset
         X_train, X_test, y_train, y_test = train_test_split(df['review'], df['sentiment'], test_size=0.2, random_state=42)
