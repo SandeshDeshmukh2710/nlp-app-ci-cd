@@ -10,7 +10,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from bs4 import BeautifulSoup
 import re
-import string
+
 
 nltk.download('stopwords')
 nltk.download('punkt')
