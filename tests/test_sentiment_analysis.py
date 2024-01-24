@@ -62,7 +62,7 @@ class TestSentimentAnalysis(unittest.TestCase):
         df = pd.DataFrame(data)
 
         # Preprocess the data
-        df['review'] = df['review'].apply(SA.preprocess_text)
+        df['review'] = df['review'].apply(preprocess_text)
 
         # Split the dataset
         X_train, X_test, y_train, y_test = train_test_split(df['review'], df['sentiment'], test_size=0.2, random_state=42)
