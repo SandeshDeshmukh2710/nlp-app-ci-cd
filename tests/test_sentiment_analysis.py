@@ -4,9 +4,9 @@
 from bs4 import BeautifulSoup
 import string
 import re
+import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-import nltk
 import unittest
 import pandas as pd
 from sklearn.model_selection import train_test_split
