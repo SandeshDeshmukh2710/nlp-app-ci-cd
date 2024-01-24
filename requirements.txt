@@ -53,7 +53,6 @@ colorama==0.4.6
 comm==0.1.4
 configobj==5.0.8
 contextlib2==21.6.0
-contourpy==1.2.0
 cryptography==41.0.7
 cycler==0.12.1
 databricks-cli==0.18.0
