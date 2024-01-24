@@ -1,0 +1,12 @@
+- my_ml_project/
+  - src/
+    - sentiment_analysis.py
+  - tests/
+    - test_sentiment_analysis.py
+  - requirements.txt
+  - main_dataset.csv
+  - .github/
+    - workflows/
+      - ci.yml
+      - cd.yml
+  - README.md
