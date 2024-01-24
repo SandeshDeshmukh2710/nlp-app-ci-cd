@@ -12,8 +12,8 @@ from bs4 import BeautifulSoup
 import re
 
 
-nltk.download('stopwords')
-nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('punkt')
 
 def preprocess_text(text):
     text = text.lower()
