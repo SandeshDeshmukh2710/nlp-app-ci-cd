@@ -1,4 +1,6 @@
 from fastapi import FastAPI, HTTPException, Form
+from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import joblib
 from bs4 import BeautifulSoup
@@ -7,11 +9,6 @@ import re
 from nltk.corpus import stopwords
 import nltk
 from nltk.tokenize import word_tokenize
-
-# import sys
-# sys.path.insert(1, "C:/Users/Admin/Desktop/Data Science/MLOps/CI-CD-Practice/src")
-
-#import sentiment_analysis as SA
 
 app = FastAPI()
 
@@ -54,7 +51,6 @@ def preprocess_text(text):
 
     return processed_text
 
-
 @app.post("/predict")
 async def predict_sentiment(review: str = Form(...)):
     # Preprocess the input text
@@ -68,3 +64,6 @@ async def predict_sentiment(review: str = Form(...)):
     
     # Return prediction result
     return {"review": review, "sentiment": int(prediction[0])}
+
+# Mount the static files directory to serve index.html
+app.mount("/", StaticFiles(directory=".", html=True), name="static")

@@ -25,3 +25,4 @@ jobs:
     - name: Run Tests
       run: |
         python -m unittest discover -s tests
+        echo 'Hello this my first echo'
